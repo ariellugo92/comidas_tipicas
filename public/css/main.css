@@ -1,0 +1,132 @@
+h1{
+    margin: 0 !important;
+}
+
+.header{
+    height: 20vh;
+    padding-top: 25px;
+    background: #333130;
+}
+
+.header-titulo h1{
+    font-size: 2rem;
+    color: #ccc;
+}
+
+.header nav{
+    font-size: 2rem;
+    background: #333130;
+}
+
+.img-centro{
+    height: 80vh;
+}
+
+.columna-prin{
+    height: 80vh !important;
+}
+
+.columna{
+    height: 400px !important;
+}
+
+.responsive-img{
+    height: 400px !important;
+    width: 650px !important;
+}
+
+.pnl-pre-main{
+    padding: 15px;
+}
+
+.pnl-pre-main #txtBusqueda{
+    margin-left: 0;
+}
+
+.col-1{
+    background: #e3e2e0;
+}
+
+.col-2{
+    background: #353130;
+    color: #ccc;
+}
+
+.col-3{
+    background: #76706b;
+    color: #ccc;
+}
+
+/*mejorando el contenido*/
+.contenido{
+    text-align: center;
+    padding: 35px 5px 5px 5px;
+}
+
+.contenido .contenido-titulo{
+    margin-bottom: 30px;
+}
+
+.contenido .contenido-parrafo{
+    text-align: justify;
+}
+
+.testimonios{
+    padding-top: 15px;
+}
+
+/*estilos para las recetas*/
+.all-recetas{
+    margin: 50px 15px;
+}
+
+.tab-titulo{
+    margin: 50px 0;
+}
+
+.opc-admin{
+    margin-bottom: 15px;
+}
+
+/*nav fixed*/
+.menu-fixed {
+	position:fixed;
+	z-index:1000;
+	top:0;
+	/*max-width:1000px;*/
+	width:100%;
+	box-shadow:0px 4px 3px rgba(0,0,0,.5);
+}
+
+/*modificando el nav*/
+nav.nav-center ul {
+    text-align: center;
+}
+nav.nav-center ul li {
+    display: inline;
+    float: none;
+}
+nav.nav-center ul li a {
+    display: inline-block;
+    padding: 0 35px;
+}
+
+/*modificando la clase row*/
+.row{
+    margin-bottom: 0 !important;
+}
+
+/*modificando los indicadores del carrusel*/
+.indicators{
+    bottom: 15px !important;
+    z-index: 900;
+}
+
+/*modificando los colores del footer*/
+.page-footer{
+    background: #353130 !important;
+}
+
+.footer-copyright{
+    background: #404040 !important;
+}
