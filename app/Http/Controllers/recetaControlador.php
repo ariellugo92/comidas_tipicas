@@ -14,6 +14,7 @@ class recetaControlador extends Controller
     public function index()
     {
         //
+        return view('main.recetas');
     }
 
     /**
@@ -80,5 +81,13 @@ class recetaControlador extends Controller
     public function destroy($id)
     {
         //
+        
+    }
+
+    /**
+    * metodo para agregar una receta segun su tipo
+    */
+    public function viewRecetaSegunTipo($tipo){
+        return view('main.add_receta', ['tipo' => $tipo]);
     }
 }

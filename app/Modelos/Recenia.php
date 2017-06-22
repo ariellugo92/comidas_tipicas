@@ -6,5 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Recenia extends Model
 {
-    //
+    // datos editables
+    protected $fillable = [
+        'autor', 'restaurante', 'resenia', 'id_usuario', 'estado'
+    ];
+
+    protected $table = 'resenias';
+
+    protected $timestamps = true;
 }

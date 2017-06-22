@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('main.home');
 });
 
-Route::get('recetas', function () {
-    return view('main.recetas');
-});
+// recetas
+Route::resource('recetas', 'recetaControlador');
+Route::get('recetas/add/{tipo}', 'recetaControlador@viewRecetaSegunTipo');
+Route::resource('nose', 'noseControlador');

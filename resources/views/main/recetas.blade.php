@@ -24,7 +24,7 @@
             </div>
             {{-- este div se mostrara solo si estan logueado --}}
             <div class="col s12 right-align opc-admin">
-                <a href="#" class="btn">Agregar Receta</a>
+                <a href="/recetas/add/comida" class="btn">Agregar Receta</a>
             </div>
             <hr>
             {{-- /div-add --}}
