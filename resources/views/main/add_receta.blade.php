@@ -2,8 +2,8 @@
 
 @section('seccion-prin')
     
-    <div class="tab-titulo">
-        Agregar una {{ $tipo }} a las recetas
+    <div class="lbl-titulo-add">
+        <h5>Agregar una {{ $tipo }} a las recetas</h5>
     </div>
     
     <div class="container">

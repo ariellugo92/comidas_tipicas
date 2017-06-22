@@ -18,4 +18,3 @@ Route::get('/', function () {
 // recetas
 Route::resource('recetas', 'recetaControlador');
 Route::get('recetas/add/{tipo}', 'recetaControlador@viewRecetaSegunTipo');
-Route::resource('nose', 'noseControlador');

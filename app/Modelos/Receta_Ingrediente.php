@@ -13,5 +13,5 @@ class Receta_Ingrediente extends Model
 
     protected $table = 'receta_ingrediente';
 
-    protected $timestamps = true;
+    public $timestamps = true;
 }

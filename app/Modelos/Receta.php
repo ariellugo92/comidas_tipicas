@@ -13,5 +13,5 @@ class Receta extends Model
 
     protected $table = 'recetas';
 
-    protected $timestamps = true;
+    public $timestamps = true;
 }
