@@ -29,6 +29,14 @@
                         <li><a href="/recetas">RECETAS</a></li>
                         <li><a href="/qs">QUINES SOMOS</a></li>
                         <li><a href="/contacto">CONTACTANOS</a></li>
+                        @if(session()->has('user_conectado'))
+                            <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Administrador</a>
+                            <ul id='dropdown1' class='dropdown-content'>
+                                <li><a href="#!"><i class="material-icons">account_circle</i>{{ getDatosUsuarioConectado()->user }}</a></li>
+                                <li><a href="#!"><i class="material-icons">assignment_turned_in</i>Rese&ntilde;as</a></li>
+                                <li><a href="/cerrar_sesion"><i class="material-icons">power_settings_new</i>Salir</a></li>
+                            </ul>
+                        @endif
                     </ul>
                 </div>
             </nav>
@@ -61,7 +69,7 @@
             <div class="footer-copyright">
             <div class="container">
             © 2017 Todos los derechos reservados
-            <a class="grey-text text-lighten-4 right" href="#!">Subir</a>
+            <a class="grey-text text-lighten-4 right" href="/login">Intranet</a>
             </div>
             </div>
         </footer>

@@ -21,7 +21,10 @@
         ],
         "psr-4": {
             "Comidas_Tipicas\\": "app/"
-        }
+        },
+        "files": [
+            "app/helpers.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {

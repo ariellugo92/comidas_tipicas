@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS `comidas_tipicas`.`usuarios` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `user` VARCHAR(45) NULL,
   `password` LONGTEXT NULL,
-  `estado` TINYINT(1) NULL,
+  `estado` TINYINT(1) NULL DEFAULT 1,
   `created_at` TIMESTAMP NULL,
   `updated_at` TIMESTAMP NULL,
   PRIMARY KEY (`id`))
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `comidas_tipicas`.`recetas` (
   `visitas` INT NULL DEFAULT 0,
   `url_img` VARCHAR(500) NULL,
   `id_usuario` INT NULL,
-  `estado` TINYINT(1) NULL,
+  `estado` TINYINT(1) NULL DEFAULT 1,
   `created_at` TIMESTAMP NULL,
   `updated_at` TIMESTAMP NULL,
   PRIMARY KEY (`id`),
@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `comidas_tipicas`.`receta_ingrediente` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `id_receta` INT NULL,
   `ingrediente` VARCHAR(45) NULL,
-  `estado` TINYINT(1) NULL,
+  `estado` TINYINT(1) NULL DEFAULT 1,
   `created_at` TIMESTAMP NULL,
   `updated_at` TIMESTAMP NULL,
   PRIMARY KEY (`id`),
@@ -86,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `comidas_tipicas`.`resenias` (
   `restaurante` VARCHAR(150) NULL,
   `resenia` LONGTEXT NULL,
   `id_usuario` INT NULL,
-  `estado` TINYINT(1) NULL,
+  `estado` TINYINT(1) NULL DEFAULT 1,
   `created_at` TIMESTAMP NULL,
   `updated_at` TIMESTAMP NULL,
   PRIMARY KEY (`id`),
@@ -109,7 +109,7 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `comidas_tipicas`;
-INSERT INTO `comidas_tipicas`.`usuarios` (`id`, `user`, `password`, `estado`, `created_at`, `updated_at`) VALUES (DEFAULT, 'admin', '1234', 1, '2017-01-01', '2017-01-01');
+INSERT INTO `comidas_tipicas`.`usuarios` (`id`, `user`, `password`, `estado`, `created_at`, `updated_at`) VALUES (DEFAULT, 'admin', '03AC674216F3E15C761EE1A5E255F067953623C8B388B4459E13F978D7C846F4', 1, '2017-01-01', '2017-01-01');
 
 COMMIT;
 

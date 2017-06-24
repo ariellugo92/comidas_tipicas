@@ -1,5 +1,7 @@
 <?php
 
+use Comidas_Tipicas\Modelos\Receta;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,8 +13,21 @@
 |
 */
 
+// ruta ajax para validar los datos del login
+Route::post('/login_validacion', 'usuarioControlador@validacionDatosLogin');
+// ruta que muestra el login
+Route::get('/login', 'usuarioControlador@viewLogin');
+// ruta para cerrar sesion
+Route::get('/cerrar_sesion', 'usuarioControlador@cerrarSesion');
+Route::resource('/usuarios', 'usuarioControlador');
+
 Route::get('/', function () {
-    return view('main.home');
+    $recetas = Receta::getTopTresRecetas();
+    return view('main.home', ['recetas' => $recetas]);
+});
+
+Route::get('/contacto', function () {
+    return view('main.contacto');
 });
 
 // recetas

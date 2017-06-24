@@ -88,6 +88,14 @@ h1{
     margin-bottom: 15px;
 }
 
+.titulo-view-receta{
+    padding: 15px;
+}
+
+.titulo-contacto{
+    padding: 30px 5px 15px 5px;
+}
+
 /*estilos del formulario*/
 .form-ingredientes{
     margin: 15px 5px 25px 5px;

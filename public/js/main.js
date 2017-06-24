@@ -76,6 +76,7 @@ $(document).ready(function(){
 				if(response.val == 'success'){
 					// redireccionamos a donde estan todas las recetas
 					$(location).attr('href', '/recetas');
+					alert('la receta se guado correctamente!')
 				}
 			},
 			error: function(response){ // funcion si ocurre un error
