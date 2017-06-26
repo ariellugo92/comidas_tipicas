@@ -51,17 +51,23 @@ $(document).ready(function(){
 		}
 		
 		// apuntamos a la ruta donde ira al php
-		var url = '/recetas';
+		var accion = $('#btnAgregarReceta').text().toLowerCase();
+		// si es modificar obtenemos el id
+		var id_modificar = $('#lblIdReceta').val();
+
+		var url = (accion == 'agregar receta') ? '/recetas' : '/recetas/' + id_modificar;
 		// obtenemos los datos del formulario
 		var formData = new FormData($('#frmRecetas')[0]);
 		// obtenemos el token que genera laravel
 		var token = $("input[name=_token").val();
 		// aniadimos a los datos los ingredientes
 		formData.append('ingredientes', arr_ingredientes);
+		// metodo de la peticion http via ajax
+		var metodo = (accion == 'agregar receta') ? 'post' : 'put';
 
 		// enviamos la peticion por ajax
 		$.ajax({
-			type: "post", // tipo de peticion
+			type: metodo, // tipo de peticion
 			url: url, // url del php
 			data: formData, // datos a enviar
 			headers: { 'X-CSRF-TOKEN': token }, // token de seguridad

@@ -181,8 +181,24 @@ class recetaControlador extends Controller
     /**
     * metodo para agregar una receta segun su tipo
     */
-    public function viewRecetaSegunTipo($tipo)
+    public function viewRecetaSegunTipo(Request $request)
     {
-        return view('main.add_receta', ['tipo' => $tipo]);
+        // obteniendo los parametros de la ruta
+        $tipo = $request->tipo;
+        $accion = $request->accion;
+        $id = $request->id;
+        
+        $receta_segun_id = new Receta;
+        // si existe la variable id quiere decir que vamos a modificar
+        if(isset($id)){
+            // buscamos a la receta segun su id
+            $receta_segun_id = Receta::find($id);
+            // tambien obtenemos los ingredientes de esa receta
+            $r_i = Receta_Ingrediente::getIngredientesSegunReceta($id);
+            return view('main.add_receta', ['tipo' => $tipo, 'accion' => $accion, 'receta' => $receta_segun_id, 'ingredientes' => $r_i]);
+        }
+
+        // si no solo pasamos la vista con los parametros recibidos
+        return view('main.add_receta', ['tipo' => $tipo, 'accion' => $accion, 'receta' => $receta_segun_id]);
     }
 }

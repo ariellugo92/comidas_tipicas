@@ -13,5 +13,5 @@ class Recenia extends Model
 
     protected $table = 'resenias';
 
-    protected $timestamps = true;
+    public $timestamps = true;
 }

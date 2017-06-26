@@ -12,31 +12,24 @@
     <div class="slider columna-prin">
         <ul class="slides">
             <li style="height: 100%;">
-                <img src="http://lorempixel.com/580/250/nature/1"> <!-- random image -->
-                <div class="caption center-align">
-                <h3>This is our big Tagline!</h3>
-                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                <img src="{{ asset('recursos/img-estaticas/Comidatipica2.jpg') }}"> <!-- random image -->
+                <div class="caption center-align img-slide">
+                <h3>MILES DE RECETAS EN UN SOLO LUGAR!</h3>
+                <h5 class="light grey-text text-lighten-3">Conoce toda la gastronomia Nicaraguense!.</h5>
                 </div>
             </li>
             <li style="height: 100%;">
-                <img src="http://lorempixel.com/580/250/nature/2"> <!-- random image -->
-                <div class="caption left-align">
-                <h3>Left Aligned Caption</h3>
-                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                <img src="{{ asset('recursos/img-estaticas/chefs.jpg') }}"> <!-- random image -->
+                <div class="caption left-align img-slide">
+                <h3>HECHAS POR PROFESIONALES</h3>
+                <h5 class="light grey-text text-lighten-3">Brindadas por los mejores cocineros de pais!.</h5>
                 </div>
             </li>
             <li style="height: 100%;">
-                <img src="http://lorempixel.com/580/250/nature/3"> <!-- random image -->
-                <div class="caption right-align">
-                <h3>Right Aligned Caption</h3>
-                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-                </div>
-            </li>
-            <li style="height: 100%;">
-                <img src="http://lorempixel.com/580/250/nature/4"> <!-- random image -->
-                <div class="caption center-align">
-                <h3>This is our big Tagline!</h3>
-                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                <img src="{{ asset('recursos/img-estaticas/restaurante.jpg') }}"> <!-- random image -->
+                <div class="caption right-align img-slide">
+                <h3>OFRECE ALGO NUEVO TODOS LOS DIAS</h3>
+                <h5 class="light grey-text text-lighten-3">Encuentra recetas unicas para tu restaurante.</h5>
                 </div>
             </li>
         </ul>
@@ -69,7 +62,7 @@
 
                             <p class="contenido-parrafo">{{ $recetas[0]->resenia }}</p>
 
-                            <a href="#" class="btn contenido-boton">Leer Mas</a>
+                            <a href="/recetas/{{ $recetas[0]->id }}" class="btn contenido-boton">Leer Mas</a>
                         </div>
                     </div>
                     <div class="col s6">
@@ -91,7 +84,7 @@
 
                             <p class="contenido-parrafo">{{ $recetas[1]->resenia }}</p>
 
-                            <a href="#" class="btn contenido-boton">Leer Mas</a>
+                            <a href="/recetas/{{ $recetas[1]->id }}" class="btn contenido-boton">Leer Mas</a>
                         </div>
                     </div>
                 </div>
@@ -107,7 +100,7 @@
 
                             <p class="contenido-parrafo">{{ $recetas[2]->resenia }}</p>
 
-                            <a href="#" class="btn contenido-boton">Leer Mas</a>
+                            <a href="/recetas/{{ $recetas[2]->id }}" class="btn contenido-boton">Leer Mas</a>
                         </div>
                     </div>
                     <div class="col s6">
@@ -126,68 +119,30 @@
                 <h3 class="center">Mira lo que opinan nuestros lectores!</h3>
             </div>
 
-            <div class="carousel">
-                <a class="carousel-item" href="#one!" style="width: 300px;">
-                    <div class="row">
-                        <div class="col s12 m5" style="width: 100%;">
-                            <div class="card-panel teal">
-                                <span class="white-text">I am a very simple card. I am good at containing small bits of information.
-                                I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
-                                </span>
-                                <span style="font-weight: bold;" class="text-right white-text"><br><br>Fulana de Tal, Restaurante X</span>
+            @if(count($resenias) > 0)
+                <div class="carousel">
+                    @foreach($resenias as $resenia)
+                        <a class="carousel-item" href="#!" style="width: 300px;">
+                            <div class="row">
+                                <div class="col s12 m5" style="width: 100%;">
+                                    <div class="card-panel teal">
+                                        <span class="white-text">{{ substr($resenia->resenia, 0, 200) . '...' }}
+                                        </span>
+                                        <span style="font-weight: bold;" class="text-right white-text">
+                                        <br><br>
+                                            {{ $resenia->autor . ', ' . $resenia->restaurante }}
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </a>
-                <a class="carousel-item" href="#two!" style="width: 300px;">
-                    <div class="row">
-                        <div class="col s12 m5" style="width: 100%;">
-                            <div class="card-panel teal">
-                                <span class="white-text">I am a very simple card. I am good at containing small bits of information.
-                                I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
-                                </span>
-                                <span style="font-weight: bold;" class="text-right white-text"><br><br>Fulana de Tal, Restaurante X</span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <a class="carousel-item" href="#three!" style="width: 300px;">
-                    <div class="row">
-                        <div class="col s12 m5" style="width: 100%;">
-                            <div class="card-panel teal">
-                                <span class="white-text">I am a very simple card. I am good at containing small bits of information.
-                                I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
-                                </span>
-                                <span style="font-weight: bold;" class="text-right white-text"><br><br>Fulana de Tal, Restaurante X</span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <a class="carousel-item" href="#four!" style="width: 300px;">
-                    <div class="row">
-                        <div class="col s12 m5" style="width: 100%;">
-                            <div class="card-panel teal">
-                                <span class="white-text">I am a very simple card. I am good at containing small bits of information.
-                                I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
-                                </span>
-                                <span style="font-weight: bold;" class="text-right white-text"><br><br>Fulana de Tal, Restaurante X</span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <a class="carousel-item" href="#five!" style="width: 300px;">
-                    <div class="row">
-                        <div class="col s12 m5" style="width: 100%;">
-                            <div class="card-panel teal">
-                                <span class="white-text">I am a very simple card. I am good at containing small bits of information.
-                                I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
-                                </span>
-                                <span style="font-weight: bold;" class="text-right white-text"><br><br>Fulana de Tal, Restaurante X</span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
+                        </a>
+                    @endforeach
+                </div>
+            @else
+                <div class="row center">
+                    <h5>AUN NO HAY RESE&Ntilde;AS AGREGADAS</h5>
+                </div>
+            @endif
         </div>
         {{-- /testimonios --}}
     @else

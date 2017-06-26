@@ -3,6 +3,7 @@
 namespace Comidas_Tipicas\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Comidas_Tipicas\Modelos\Recenia;
 
 class receniaControlador extends Controller
 {
@@ -14,6 +15,8 @@ class receniaControlador extends Controller
     public function index()
     {
         //
+        $resenias = Recenia::all();
+        return view('main.admin_testimonios', ['resenias' => $resenias]);
     }
 
     /**
@@ -35,6 +38,15 @@ class receniaControlador extends Controller
     public function store(Request $request)
     {
         //
+        $resenia = new Recenia;
+        $resenia->autor = $request->txtAutor;
+        $resenia->restaurante = $request->txtRestaurante;
+        $resenia->resenia = $request->txtTextoResenia;
+
+        if($resenia->save()){
+            $request->session()->flash('val', 'success');
+            return redirect('/resenias');
+        }
     }
 
     /**

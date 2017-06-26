@@ -33,7 +33,7 @@
                             <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Administrador</a>
                             <ul id='dropdown1' class='dropdown-content'>
                                 <li><a href="#!"><i class="material-icons">account_circle</i>{{ getDatosUsuarioConectado()->user }}</a></li>
-                                <li><a href="#!"><i class="material-icons">assignment_turned_in</i>Rese&ntilde;as</a></li>
+                                <li><a href="/resenias"><i class="material-icons">assignment_turned_in</i>Rese&ntilde;as</a></li>
                                 <li><a href="/cerrar_sesion"><i class="material-icons">power_settings_new</i>Salir</a></li>
                             </ul>
                         @endif

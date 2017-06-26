@@ -33,7 +33,7 @@
             @if(session()->has('user_conectado'))
                 {{-- este div se mostrara solo si estan logueado --}}
                 <div class="col s12 right-align opc-admin">
-                    <a href="/recetas/add/comida" class="btn">Agregar Comida</a>
+                    <a href="/recetas/form/comida/agregar" class="btn">Agregar Comida</a>
                 </div>
                 <hr>
                 {{-- /div-add --}}
@@ -56,7 +56,9 @@
                         </div>
 
                         <div class="card-action">
-                            <a href="#">Modificar</a>
+                            @if(session()->has('user_conectado'))
+                                <a href="/recetas/form/comida/modificar/{{ $receta->id }}">Modificar</a>
+                            @endif
                             <a href="/recetas/{{ $receta->id }}">Ver Mas</a>
                         </div>
                     </div>
@@ -76,7 +78,7 @@
             @if(session()->has('user_conectado'))
                 {{-- este div se mostrara solo si estan logueado --}}
                 <div class="col s12 right-align opc-admin">
-                    <a href="/recetas/add/bebida" class="btn">Agregar Bebida</a>
+                    <a href="/recetas/form/bebida/agregar" class="btn">Agregar Bebida</a>
                 </div>
                 <hr>
                 {{-- /div-add --}}
@@ -99,7 +101,9 @@
                         </div>
 
                         <div class="card-action">
-                            <a href="#">Modificar</a>
+                            @if(session()->has('user_conectado'))
+                                <a href="/recetas/form/bebida/modificar/{{ $receta->id }}">Modificar</a>
+                            @endif
                             <a href="/recetas/{{ $receta->id }}">Ver Mas</a>
                         </div>
                     </div>
@@ -119,7 +123,7 @@
             @if(session()->has('user_conectado'))
                 {{-- este div se mostrara solo si estan logueado --}}
                 <div class="col s12 right-align opc-admin">
-                    <a href="/recetas/add/postre" class="btn">Agregar Postre</a>
+                    <a href="/recetas/form/postre/agregar" class="btn">Agregar Postre</a>
                 </div>
                 <hr>
                 {{-- /div-add --}}
@@ -142,7 +146,9 @@
                         </div>
 
                         <div class="card-action">
-                            <a href="#">Modificar</a>
+                            @if(session()->has('user_conectado'))
+                                <a href="/recetas/form/postre/modificar/{{ $receta->id }}">Modificar</a>
+                            @endif
                             <a href="/recetas/{{ $receta->id }}">Ver Mas</a>
                         </div>
                     </div>

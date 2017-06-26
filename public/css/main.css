@@ -96,6 +96,22 @@ h1{
     padding: 30px 5px 15px 5px;
 }
 
+/*estilos del qs*/
+.titulo-qs{
+    margin: 20px;
+    padding: 20px;
+}
+
+.main-qs{
+    margin: 25px;
+}
+
+/*imagenes del carrusel*/
+.img-slide{
+    background-color: rgba(0,0,0,.3) !important;
+    border-radius: 5px;
+}
+
 /*estilos del formulario*/
 .form-ingredientes{
     margin: 15px 5px 25px 5px;

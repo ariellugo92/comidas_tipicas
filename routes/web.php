@@ -1,6 +1,7 @@
 <?php
 
 use Comidas_Tipicas\Modelos\Receta;
+use Comidas_Tipicas\Modelos\Recenia;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +24,8 @@ Route::resource('/usuarios', 'usuarioControlador');
 
 Route::get('/', function () {
     $recetas = Receta::getTopTresRecetas();
-    return view('main.home', ['recetas' => $recetas]);
+    $resenias = Recenia::all();
+    return view('main.home', ['recetas' => $recetas, 'resenias' => $resenias]);
 });
 
 Route::get('/contacto', function () {
@@ -32,4 +34,12 @@ Route::get('/contacto', function () {
 
 // recetas
 Route::resource('recetas', 'recetaControlador');
-Route::get('recetas/add/{tipo}', 'recetaControlador@viewRecetaSegunTipo');
+Route::get('recetas/form/{tipo}/{accion}/{id?}', 'recetaControlador@viewRecetaSegunTipo');
+
+// ruta de quienes somos
+Route::get('qs', function(){
+    return view('main.qs');
+});
+
+// resenias
+Route::resource('/resenias', 'receniaControlador');

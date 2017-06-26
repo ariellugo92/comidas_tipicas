@@ -3,11 +3,15 @@
 @section('seccion-prin')
     
     <div class="lbl-titulo-add">
-        <h5>Agregar una {{ $tipo }} a las recetas</h5>
+        @if($tipo == 'postre')
+            <h5>{{ ucwords($accion . ' un ' . $tipo . ' a las recetas') }}</h5>
+        @else
+            <h5>{{ ucwords($accion . ' una ' . $tipo . ' a las recetas') }}</h5>
+        @endif
     </div>
     
     <div class="container">
-        @include('main.form', ['btn' => 'Agregar Receta', 'metodo' => 'post', 'tipo' => $tipo])
+        @include('main.form', ['accion' => $accion, 'metodo' => 'post', 'tipo' => $tipo, 'receta' => $receta])
     </div>
 
 @endsection
