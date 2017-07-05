@@ -150,9 +150,9 @@
             <h2>{{ ucwords('aun no hay recetas agregadas') }}</h2>
             @if(session()->has('user_conectado'))
                 <p class="center">
-                    <a href="/recetas/add/comida" class="btn">Agregar Receta De Comida</a>
-                    <a href="/recetas/add/bebida" class="btn">Agregar Receta De Bebida</a>
-                    <a href="/recetas/add/postre" class="btn">Agregar Receta De Postre</a>
+                    <a href="/recetas/form/comida/add" class="btn">Agregar Receta De Comida</a>
+                    <a href="/recetas/form/comida/add" class="btn">Agregar Receta De Bebida</a>
+                    <a href="/recetas/form/comida/add" class="btn">Agregar Receta De Postre</a>
                 </p>
             @endif
         </div>

@@ -57,6 +57,9 @@ $(document).ready(function(){
 
 		var url = (accion == 'agregar receta') ? '/recetas' : '/recetas/' + id_modificar;
 		// obtenemos los datos del formulario
+		if(accion != 'agregar receta'){
+			$('#frmRecetas').attr('enctype', 'application/x-www-form-urlencoded');
+		}
 		var formData = new FormData($('#frmRecetas')[0]);
 		// obtenemos el token que genera laravel
 		var token = $("input[name=_token").val();

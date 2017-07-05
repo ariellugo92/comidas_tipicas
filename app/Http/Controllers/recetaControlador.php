@@ -152,7 +152,7 @@ class recetaControlador extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**
@@ -164,7 +164,17 @@ class recetaControlador extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $receta_mod = Receta::find($id);
+        $receta_mod->nombre = $request->txtNombre;
+        $receta_mod->resenia = $request->txtResenia;
+        $receta_mod->procedimiento = $request->txtProcedimientos;
+
+        if($receta_mod->save()){
+            $request->session()->flash('val_mod', 'success');
+            return response()->json(['val' => 'success'], 200);
+        }
+
+        return response()->json(['val' => 'error'], 500);
     }
 
     /**

@@ -1,4 +1,4 @@
-{{ Form::open(['method' => $metodo, 'id' => 'frmRecetas', 'files' => true]) }}
+{{ Form::open(['id' => 'frmRecetas', 'files' => true]) }}
 
 {{ Form::hidden('tipo', $tipo) }}
 
@@ -48,7 +48,7 @@
         </div>
     </div>
 @else
-    {{ Form::hidden('lblIdReceta', $receta->id) }}
+    {{ Form::hidden('lblIdReceta', $receta->id, ['id' => 'lblIdReceta']) }}
     <div class="row">
         <p>Ingredientes agregados</p>
     </div>

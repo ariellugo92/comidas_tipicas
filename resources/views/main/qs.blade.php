@@ -13,8 +13,8 @@
             <h6>Kelly Aguirre</h6>
             <p>Project Manager</p>
             <div class="row">
-                <a href="#">Facebbok</a> |
-                <a href="#">Twitter</a>
+                <a href="https://www.facebook.com/kelly.aguirre.7587 " target= "_blank">Facebook</a> 
+             
             </div>
         </div>
 
@@ -24,8 +24,8 @@
             <h6>Daniela Bonilla</h6>
             <p>Web Design</p>
             <div class="row">
-                <a href="#">Facebbok</a> |
-                <a href="#">Twitter</a>
+                <a href="https://www.facebook.com/daniela.prudente.79" target= "_blank">Facebook</a> 
+                
             </div>
         </div>
 
@@ -35,8 +35,8 @@
             <h6>Rene Nicaragua</h6>
             <p>Web Developer</p>
             <div class="row">
-                <a href="#">Facebbok</a> |
-                <a href="#">Twitter</a>
+                <a href="https://www.facebook.com/Rene.nikka" target= "_blank" >Facebook</a> 
+               
             </div>
         </div>
 
@@ -46,8 +46,8 @@
             <h6>James Samayoa</h6>
             <p>Web Design</p>
             <div class="row">
-                <a href="#">Facebbok</a> |
-                <a href="#">Twitter</a>
+                <a href="https://www.facebook.com/JameSamayoa" target= "_blank">Facebook</a> 
+               
             </div>
         </div>
     </div>

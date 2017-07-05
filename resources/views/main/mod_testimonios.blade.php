@@ -4,7 +4,7 @@
 
     @if(session()->has('val'))
         <script>
-            alert('La reseña se guardo correctamente!')
+            alert('La reseña se modifico correctamente!');
         </script>
     @endif
 
@@ -14,19 +14,20 @@
 
     {{-- formulario de testimonios --}}
     <div class="row center">
-        {{ Form::open(['url' => '/resenias', 'id' => 'frmResenias', 'class' => 'container', 'method' => 'post']) }}
+        {{ dd($resenia) }}
+        {{ Form::open(['url' => '/resenias/' . $resenia->id, 'id' => 'frmResenias', 'class' => 'container', 'method' => 'put']) }}
 
             <div class="row">
                 <div class="col s12 m6">
                     <div class="input-field col s12">
-                        {{ Form::text('txtAutor', null, ['class' => 'validate']) }}
+                        {{ Form::text('txtAutor', $resenia->autor, ['class' => 'validate']) }}
                         <label for="email" data-error="wrong" data-success="right">{{ ucwords('autor de la reseña') }}</label>
                     </div>
                 </div>
 
                 <div class="col s12 m6">
                     <div class="input-field col s12">
-                        {{ Form::text('txtRestaurante', null, ['class' => 'validate']) }}
+                        {{ Form::text('txtRestaurante', $resenia->restaurante, ['class' => 'validate']) }}
                         <label for="email" data-error="wrong" data-success="right">{{ ucwords('restaurante') }}</label>
                     </div>
                 </div>
@@ -34,13 +35,13 @@
 
             <div class="row">
                 <div class="input-field col s12">
-                    {{ Form::textarea('txtTextoResenia', null, ['class' => 'materialize-textarea']) }}
+                    {{ Form::textarea('txtTextoResenia', $resenia->resenia, ['class' => 'materialize-textarea']) }}
                     <label for="textarea1">Escribe Tu Rese&ntilde;a Aqui</label>
                 </div>
             </div>
 
             <div class="row">
-                <input type="submit" value="AGREGAR RESEÑA" class="btn">
+                <input type="submit" value="MODIFICAR RESEÑA" class="btn">
             </div><br><br><hr><br>
 
         {{ Form::close() }}
@@ -64,12 +65,12 @@
                 </thead>
 
                 <tbody>
-                    @foreach($resenias as $resenia)
+                    @foreach($resenias as $resenia_all)
                         <tr>
-                            <td>{{ $resenia->autor }}</td>
-                            <td>{{ $resenia->restaurante }}</td>
+                            <td>{{ $resenia_all->autor }}</td>
+                            <td>{{ $resenia_all->restaurante }}</td>
                             <td>
-                                <a href="/resenias/{{ $resenia->id }}">Modificar</a>
+                                <a href="/resenias/{{ $resenia_all->id }}">Modificar</a>
                             </td>
                         </tr>
                     @endforeach

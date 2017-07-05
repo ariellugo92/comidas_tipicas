@@ -58,6 +58,8 @@ class receniaControlador extends Controller
     public function show($id)
     {
         //
+        $resenia = Recenia::where('estado', 1)->get();
+        return view('main.mod_testimonios', ['resenia' => $resenia]);
     }
 
     /**
