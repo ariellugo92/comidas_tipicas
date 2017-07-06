@@ -64,15 +64,17 @@
                 </thead>
 
                 <tbody>
-                    @foreach($ingredientes as $ingrediente)
-                        <tr>
-                            <td>{{ $ingrediente->ingrediente }}</td>
-                            <td>
-                                <a href="#" class="btn">Modificar</a>
-                                <a href="#" class="btn">Eliminar</a>
-                            </td>
-                        </tr>
-                    @endforeach
+                    @if(isset($ingredientes))
+                        @foreach($ingredientes as $ingrediente)
+                            <tr>
+                                <td>{{ $ingrediente->ingrediente }}</td>
+                                <td>
+                                    <a href="#" class="btn">Modificar</a>
+                                    <a href="#" class="btn">Eliminar</a>
+                                </td>
+                            </tr>
+                        @endforeach
+                    @endif
                 </tbody>
             </table>
         </div>
